@@ -140,7 +140,7 @@ async def collect_answers(message: Message, state: FSMContext):
         # Save to Google Sheets
         answers.update(videos)
         print(answers, category)
-        if True:
+        try:
             append_submission(
                 spreadsheet_url=SPREADSHEET_URL,
                 sheet_name=category,
@@ -150,12 +150,12 @@ async def collect_answers(message: Message, state: FSMContext):
                 "✅ Arizangiz muvaffaqiyatli yuborildi!\nRahmat! Ma’lumotlaringiz qabul qilindi va tizimga saqlandi.\nTez orada administrator siz bilan bog‘lanadi.\n\n📞 Savollar bo‘lsa, shu yerda yozishingiz mumkin.",
                 reply_markup=categories_keyboard()
             )
-        # except Exception as e:
-        #     print(str(e))
-        #     await message.answer(
-        #         "❌ Saqlashda xatolik yuz berdi. Qayta urunib ko'ring yoki administratorga murojaat qiling.",
-        #         reply_markup=categories_keyboard()
-        #     )
+        except Exception as e:
+            print(str(e))
+            await message.answer(
+                "❌ Saqlashda xatolik yuz berdi. Qayta urunib ko'ring yoki administratorga murojaat qiling.",
+                reply_markup=categories_keyboard()
+            )
         await state.clear()
         return
 
