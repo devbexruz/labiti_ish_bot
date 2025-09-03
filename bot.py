@@ -17,11 +17,13 @@ load_dotenv()
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")
 BOT_USERNAME = os.getenv("BOT_USERNAME")
+ADMINS = os.getenv("ADMINS")
 
 if not BOT_TOKEN:
     raise RuntimeError("BOT_TOKEN .env da belgilanmagan")
 if not SPREADSHEET_URL:
     raise RuntimeError("SPREADSHEET_URL .env da belgilanmagan")
+
 
 bot = Bot(BOT_TOKEN)
 dp = Dispatcher(storage=MemoryStorage())
@@ -86,6 +88,15 @@ Tilni tanlang (Please select a language, Выберите язык):
 async def back_from_category(message: Message, state: FSMContext):
     await state.set_state(ApplyForm.language)
     await message.answer("Tilni tanlang:", reply_markup=lang_keyboard())
+
+@dp.message(F.chat.id.in_(ADMINS) and F.text.startswith("Video:"))
+async def admins(message):
+    text = message.text.strip()
+    file_id = text[6:]        
+    try:
+        await bot.send_video(message.chat.id, file_id)
+    except:
+        await bot.send_message(message.chat.id, "Video topilmadi")
 
 @dp.message(ApplyForm.language)
 async def choose_language(message: Message, state: FSMContext):
@@ -162,7 +173,7 @@ async def collect_answers(message: Message, state: FSMContext):
                 file_url = f"=HYPERLINK(\"https://api.telegram.org/file/bot{BOT_TOKEN}/{file_path}\";\"Video\")"
                 videos[q["text"]] = file_url
             except:
-                videos[q["text"]] =  f"=HYPERLINK(\"https://t.me/{BOT_USERNAME[1:]}?start={message.video.file_id}\";\"Katta Video\")"
+                videos[q["text"]] = "Video:"+message.video.file_id
         else:
             await message.answer(to_translate(language, "Iltimos, video yuboring yoki '⬅️ Ortga' tugmasidan foydalaning."), reply_markup=choices_keyboard([], language))
             return
