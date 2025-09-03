@@ -141,14 +141,17 @@ async def collect_answers(message: Message, state: FSMContext):
         answers.update(videos)
         print(answers, category)
         try:
+            await message.answer(
+                "Biroz kuting ...",
+                reply_markup=categories_keyboard()
+            )
             append_submission(
                 spreadsheet_url=SPREADSHEET_URL,
                 sheet_name=category,
                 answers=answers
             )
             await message.answer(
-                "✅ Arizangiz muvaffaqiyatli yuborildi!\nRahmat! Ma’lumotlaringiz qabul qilindi va tizimga saqlandi.\nTez orada administrator siz bilan bog‘lanadi.\n\n📞 Savollar bo‘lsa, shu yerda yozishingiz mumkin.",
-                reply_markup=categories_keyboard()
+                "✅ Arizangiz muvaffaqiyatli yuborildi!\nRahmat! Ma’lumotlaringiz qabul qilindi va tizimga saqlandi.\nTez orada administrator siz bilan bog‘lanadi.\n\n📞 Savollar bo‘lsa, shu yerda yozishingiz mumkin."
             )
         except Exception as e:
             print(str(e))
