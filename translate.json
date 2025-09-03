@@ -1,0 +1,494 @@
+{
+  "Stilist": {
+    "ru": "Стилист",
+    "en": "Stylist"
+  },
+  "Kolorit": {
+    "ru": "Колорит",
+    "en": "Colorite"
+  },
+  "Vizajist": {
+    "ru": "Макияж",
+    "en": "Makeupist"
+  },
+  "Manikyur/Pedikyur": {
+    "ru": "Маникюр / педикюр",
+    "en": "A manicure / pedicure"
+  },
+  "Kiprikchi": {
+    "ru": "Двойной",
+    "en": "Double-bitten"
+  },
+  "Depilatsiya": {
+    "ru": "Разумный",
+    "en": "Delilacy"
+  },
+  "Administrator": {
+    "ru": "Администратор",
+    "en": "Administrator"
+  },
+  "1) Ism va familiyangizni yozing.": {
+    "ru": "1) Напишите свое имя и фамилию.",
+    "en": "1) Write your name and last name."
+  },
+  "2) Telefon raqamingizni yozing.": {
+    "ru": "2) Введите свой номер телефона.",
+    "en": "2) Type your phone number."
+  },
+  "3) Qanday to‘lov qilishlarini xohlaysiz?": {
+    "ru": "3) Как вы хотите, чтобы они заплатили?",
+    "en": "3) How do you want them to pay?"
+  },
+  "3.1) Agar 'Boshqa taklif' bo'lsa, taklifingizni yozing.": {
+    "ru": "3.1) Если еще предложение, напишите свое предложение.",
+    "en": "3.1) If 'else suggestion, write your offer."
+  },
+  "4) Qaysi smenada ishlash qulay?": {
+    "ru": "4) Какой сдвиг удобен для работы?",
+    "en": "4) Which shift is convenient to work?"
+  },
+  "5) Qaysi soha bo‘yicha o‘zingizni kuchli hisoblaysiz? (soch, makiyaj, qosh va h.k.)": {
+    "ru": "5) В какой области вы считаете себя сильным? (волосы, макияж, бровь и т. Д.)",
+    "en": "5) In what area do you consider yourself strong? (hair, makeup, eyebrow, etc.)"
+  },
+  "6) Ishda eng ko‘p foydalanadigan asbobingiz qaysi?": {
+    "ru": "6) Какова ваша способность использовать больше всего на работе?",
+    "en": "6) What is your ability to use the most at work?"
+  },
+  "7) Mijoz bilan ishlashda eng muhim jihat nima?": {
+    "ru": "7) Какой самый важный аспект работы с клиентом?",
+    "en": "7) What is the most important aspect of working with the customer?"
+  },
+  "8) Go‘zallik sohasidagi qaysi trendlarga ko‘proq e’tibor berasiz?": {
+    "ru": "8) Какая тенденция в области красоты вы уделяете больше внимания?",
+    "en": "8) What trend in the field of beauty do you give more attention?"
+  },
+  "9) O‘z ustingizda qanday qilib muntazam ishlaysiz?": {
+    "ru": "9) Как вы регулярно работаете самостоятельно?",
+    "en": "9) How do you regularly work on your own?"
+  },
+  "10) Mijoz natijadan qoniqmasa, qanday yo‘l tutasiz?": {
+    "ru": "10) Как вы отреагируете, если клиент не удовлетворяет результат?",
+    "en": "10) How do you react if the customer does not satisfy the result?"
+  },
+  "11) Sizningcha, ideal stilist bo‘lish uchun 3 ta asosiy sifat nima?": {
+    "ru": "11) Как вы думаете, что 3 основного качества - идеальным стилистом?",
+    "en": "11) What do you think is 3 main quality to be an ideal stylist?"
+  },
+  "12) O‘z ishingizda qaysi mahsulot yoki brendni ko‘proq ishlatasiz?": {
+    "ru": "12) Какой продукт или бренд вы используете больше в своей работе?",
+    "en": "12) What product or brand do you use more in your work?"
+  },
+  "13) O‘zingiz haqingizda qisqa video yuboring.": {
+    "ru": "13) Отправьте короткое видео о себе.",
+    "en": "13) Send a short video about yourself."
+  },
+  "14) Uydagilaringiz haqida video yuboring.": {
+    "ru": "14) Отправьте видео о вашем доме.",
+    "en": "14) Send video about your home."
+  },
+  "15) Qilgan ishlaringiz (soch/makiyaj/qosh/kiprik) videosini yuboring.": {
+    "ru": "15) Отправьте видео о том, что вы делаете (волосы / макияж / ресницы).",
+    "en": "15) Send a video of what you do (hair / makeup / eyelare)."
+  },
+  "3) Qaysi smenada ishlash qulay?": {
+    "ru": "3) Какой сдвиг удобен для работы?",
+    "en": "3) Which shift is convenient to work?"
+  },
+  "4) Qanday to‘lov shaklida ishlashni xohlaysiz?": {
+    "ru": "4) Какова форма оплаты?",
+    "en": "4) What is the payment form of work?"
+  },
+  "4.1) Agar 'Boshqa taklif' bo'lsa, taklifingizni yozing.": {
+    "ru": "4.1) Напишите свое предложение, если у вас есть другие предложения.",
+    "en": "4.1) Write your offer if you have 'other suggestions."
+  },
+  "5) Soch bo‘yash bo‘yicha necha yillik tajribangiz bor?": {
+    "ru": "5) Сколько лет опыта в живописи?",
+    "en": "5) How many years of experience in hair painting have?"
+  },
+  "6) Qaysi soch bo‘yash usullarini yaxshi bilasiz? (balayage, airtouch, ombre, ...)": {
+    "ru": "6) Какие методы покраски волос вы хорошо знаете? (Balayage, Airtouch, Ombre, ...)",
+    "en": "6) Which hair painting methods do you know well? (Balayage, AirTouch, OMBRE, ...)"
+  },
+  "7) Qaysi firmalarning bo‘yoqlaridan foydalanishni afzal ko‘rasiz?": {
+    "ru": "7) Какие фирмы вы бы предпочли использовать краски?",
+    "en": "7) Which firms would you prefer to use paints?"
+  },
+  "8) Bir kunda o‘rtacha nechta mijoz qabul qila olasiz?": {
+    "ru": "8) Сколько клиентов вы можете принять средний день?",
+    "en": "8) How many customers can you accept the average day?"
+  },
+  "9) Mijoz bilan ishlashda eng muhim tamoyil?": {
+    "ru": "9) Самый важный принцип при работе с клиентом?",
+    "en": "9) The most important principle when working with the customer?"
+  },
+  "10) Konfliktli mijozlar bilan qanday muomala qilasiz?": {
+    "ru": "10) Как вы справляетесь с конфликтными клиентами?",
+    "en": "10) How do you deal with conflict customers?"
+  },
+  "11) Qo‘shimcha xizmatlar (kesish, fen, davolash) qila olasizmi?": {
+    "ru": "11) Можете ли вы получить дополнительные услуги (резка, Fen, Heal)?",
+    "en": "11) Can you do additional services (cutting, fen, heal)?"
+  },
+  "12) Jamoa bilan ishlash tajribangiz bormi? Qanday?": {
+    "ru": "12) У вас есть опыт работы с командой? Как?",
+    "en": "12) Do you have work experience with the team? How?"
+  },
+  "13) Gigiyena va xavfsizlik qoidalariga qanday amal qilasiz?": {
+    "ru": "13) Как применяются правила гигиены и безопасности?",
+    "en": "13) How do hygiene and security rules apply?"
+  },
+  "14) O‘zingiz haqingizda qisqa video yuboring.": {
+    "ru": "14) Отправьте короткое видео о себе.",
+    "en": "14) Send a short video about yourself."
+  },
+  "15) Uydagilaringiz haqida video yuboring.": {
+    "ru": "15) Отправьте видео о вашем доме.",
+    "en": "15) Send video about your home."
+  },
+  "16) Qilgan ishlaringiz (soch bo‘yash va h.k.) videosini yuboring.": {
+    "ru": "16) Отправьте видео о том, что вы делаете (живопись и т. Д.).",
+    "en": "16) Send a video of what you do (hair painting and etc.)."
+  },
+  "1) Ism va familiyangiz?": {
+    "ru": "1) Имя и фамилия?",
+    "en": "1) Name and last name?"
+  },
+  "2) Telefon raqamingiz?": {
+    "ru": "2) Какой у вас номер телефона?",
+    "en": "2) What is your phone number?"
+  },
+  "3) Vizajistlik sohasida qancha tajriba?": {
+    "ru": "3) Сколько опыта в области макияжа?",
+    "en": "3) How much experience in the field of make-up?"
+  },
+  "4) Qaysi xizmat turlarini ko‘proq qilasiz? (kundalik/to‘y/sahna)": {
+    "ru": "4) Какие виды услуг вы получаете больше? (ежедневно / свадьба / сцена)",
+    "en": "4) What types of services do you do more? (daily / wedding / scene)"
+  },
+  "5) Asosiy kosmetik brendlaringiz?": {
+    "ru": "5) Каковы основные косметические бренды?",
+    "en": "5) What are the main cosmetic brands?"
+  },
+  "6) Yuz shakliga qarab uslub tanlash bo‘yicha fikringiz?": {
+    "ru": "6) Вы думаете о выборе стиля для формы лица?",
+    "en": "6) Do you think about choice of style towards a face form?"
+  },
+  "7) Eng qiyin make-up jarayoni qaysi?": {
+    "ru": "7) Какой самый сложный процесс макияжа?",
+    "en": "7) What is the hardest make-up process?"
+  },
+  "8) Qaysi smena qulay?": {
+    "ru": "8) Какой сдвиг удобен?",
+    "en": "8) Which shift is convenient?"
+  },
+  "9) To‘lov tizimi qaysi ko‘rinishda qulay?": {
+    "ru": "9) в каком представлении о платежной системе удобен?",
+    "en": "9) In which view of the payment system is convenient?"
+  },
+  "9.1) Agar 'Boshqa taklif' bo'lsa, taklifingizni yozing.": {
+    "ru": "9.1) Если еще предложение, напишите свое предложение.",
+    "en": "9.1) If 'else suggestion, write your offer."
+  },
+  "10) Bir kunda o‘rtacha nechta mijoz qabul qilasiz?": {
+    "ru": "10) Сколько клиентов вы принимаете за один день?",
+    "en": "10) How many customers do you accept in one day?"
+  },
+  "11) Eng ko‘p uchraydigan talab?": {
+    "ru": "11) Самый распространенный спрос?",
+    "en": "11) The most common demand?"
+  },
+  "12) Qanday kurs yoki master-klasslarda qatnashgansiz?": {
+    "ru": "12) В каком курсе или мастер -классах вы участвовали?",
+    "en": "12) What course or master classes did you participate in?"
+  },
+  "13) Vizajistda eng muhim 3 sifat?": {
+    "ru": "13) Наиболее важные 3 качественно в вашем персоналистике?",
+    "en": "13) The most important 3 qualitatively in your personalist?"
+  },
+  "15) O‘zingiz haqingizda qisqa video yuboring.": {
+    "ru": "15) Отправьте короткое видео о себе.",
+    "en": "15) Send a short video about yourself."
+  },
+  "16) Qilgan ishlaringiz (make-up va h.k.) videosini yuboring.": {
+    "ru": "16) Отправьте видео о том, что вы сделали (макияж и H.K.).",
+    "en": "16) Send the video of what you have done (Make-Up and H.K.)."
+  },
+  "1) Ism-familiyangiz?": {
+    "ru": "1) Ваше имя ваше первое?",
+    "en": "1) Your name is your first?"
+  },
+  "3) Qaysi sohada mutaxassissiz? (manikyur/pedikyur/ikkalasi)": {
+    "ru": "3) В какой области вы профессиональны? (Маникюр / Педикюр / Оба)",
+    "en": "3) In what area are you professional? (Manicure / Pedicure / Both)"
+  },
+  "4) To‘lov qaysi turda qulay?": {
+    "ru": "4) Какой тур удобен?",
+    "en": "4) What kind of tour is convenient?"
+  },
+  "5) Qaysi smena qulay?": {
+    "ru": "5) Какой сдвиг удобен?",
+    "en": "5) Which shift is convenient?"
+  },
+  "6) Ish tajribangiz necha yil?": {
+    "ru": "6) Сколько лет опыта работы?",
+    "en": "6) How many years of work experience?"
+  },
+  "7) Qaysi xizmatlarni taklif qilasiz? (gel lak, apparat, dizayn...)": {
+    "ru": "7) Какие услуги вы предлагаете? (Гелл шнурки, твердые, дизайн)",
+    "en": "7) What services do you offer? (Gell Laces, Hards, Design)"
+  },
+  "8) Ishda ko‘proq nimaga e’tibor berasiz?": {
+    "ru": "8) Что вы смотрите на работу?",
+    "en": "8) What do you look at at work?"
+  },
+  "9) Mijozlar bilan ishlashda eng muhim jihat?": {
+    "ru": "9) Самый важный аспект работы с клиентами?",
+    "en": "9) The most important aspect of working with customers?"
+  },
+  "10) Qanday asbob-uskunalardan foydalanasiz?": {
+    "ru": "10) Какое оборудование вы используете?",
+    "en": "10) What kind of equipment do you use?"
+  },
+  "11) Dezinfeksiya va sterilizatsiya usullari?": {
+    "ru": "11) Методы дезинфекции и стерилизации?",
+    "en": "11) Methods of disinfection and sterilization?"
+  },
+  "12) Kelajak rejalar (salon, malaka oshirish)?": {
+    "ru": "12) Планы на будущее (продажи, обучение)?",
+    "en": "12) Future plans (sales, training)?"
+  },
+  "13) Sizni ajratib turadigan jihatlar?": {
+    "ru": "13) Вас о том?",
+    "en": "13) Disresporting you?"
+  },
+  "15) Ishlaringiz videosini yuboring.": {
+    "ru": "15) Отправьте видео о вашей работе.",
+    "en": "15) Send a video of your work."
+  },
+  "16) Uydagilaringiz haqida video yuboring.": {
+    "ru": "16) Отправьте видео о вашем доме.",
+    "en": "16) Send video about your home."
+  },
+  "1) Ism-familyangizni yozing.": {
+    "ru": "1) Напишите свое имя.",
+    "en": "1) Write your first name."
+  },
+  "3) Necha yildan beri kiprik bilan shug‘ullanasiz?": {
+    "ru": "3) Сколько лет вы участвовали в Cybrick?",
+    "en": "3) How many years have you been involved in cybrick?"
+  },
+  "4) Qaysi turdagi kiprik ishlashni yaxshi ko‘rasiz? (klassika/2D/3D/...)": {
+    "ru": "4) Какой тип Cippal вам нравится работать? (Классика / 2d / 3d / ...)",
+    "en": "4) What type of cippal do you like to work? (classic / 2D / 3D / ...)"
+  },
+  "5) Qaysi materiallardan foydalanasiz? (brend/sifat)": {
+    "ru": "5) Какие материалы вы используете? (Бренд / качество)",
+    "en": "5) What materials do you use? (Brand / Quality)"
+  },
+  "6) Bir kunda o‘rtacha nechta mijoz qabul qilasiz?": {
+    "ru": "6) Сколько клиентов вы принимаете за один день?",
+    "en": "6) How many customers do you accept in one day?"
+  },
+  "7) Siz uchun birinchi o‘rinda nima turadi: tezlikmi yoki sifat?": {
+    "ru": "7) Что первое для вас: скорость или качество?",
+    "en": "7) What is the first in place for you: speed or quality?"
+  },
+  "8) Allergiya yoki xavfsizlik bo‘yicha maxsus qoidalar bormi?": {
+    "ru": "8) Есть ли какие -либо особые правила для аллергии или безопасности?",
+    "en": "8) Are there any special rules for allergies or safety?"
+  },
+  "9) Qanday xizmatlaringiz bor? (klassik, 2D/3D, laminirovka...)": {
+    "ru": "9) Какие у вас услуги? (Классика, 2d / 3d, Ламиноловововака ...)",
+    "en": "9) What services do you have? (Classic, 2D / 3D, laminolovovovka ...)"
+  },
+  "10) To‘lovni qaysi turda xohlaysiz?": {
+    "ru": "10) Какой тип вы хотите оплатить?",
+    "en": "10) What type do you want payment?"
+  },
+  "10.1) Agar 'Boshqa taklif' bo'lsa, taklifingizni yozing.": {
+    "ru": "10.1) Если «другие предложения», введите свое предложение.",
+    "en": "10.1) If 'other suggestions', type your offer."
+  },
+  "11) Qaysi smena qulay?": {
+    "ru": "11) Какой сдвиг удобен?",
+    "en": "11) Which shift is convenient?"
+  },
+  "12) Qaysi hududda yashaysiz va ishlash uchun qayer qulay?": {
+    "ru": "12) В какой области вы живете и где удобно для работы?",
+    "en": "12) In what area do you live and where is comfortable for work?"
+  },
+  "13) Doimiy mijozlarmi yoki yangi mijozlar muhimroq?": {
+    "ru": "13) важны ли постоянные клиенты или новые клиенты?",
+    "en": "13) Are regular customers or new customers important?"
+  },
+  "15) Ishlaringiz (kiprik) videosini yuboring.": {
+    "ru": "15) Отправьте видео о вашей работе (Ciprik).",
+    "en": "15) Send a video of your work (ciprik)."
+  },
+  "3) Necha yildan beri depilyatsiya sohasida ishlaysiz?": {
+    "ru": "3) Сколько лет вы работали в области заместителя?",
+    "en": "3) How many years has you been working in the field of deputy?"
+  },
+  "4) Qaysi turdagi depilyatsiya xizmatlarini qilasiz? (shugar/mum/lazer/...)": {
+    "ru": "4) Какой тип депиляции вы делаете? (Магазин / воск / лазер / ...)",
+    "en": "4) Which type of depiliation do you do? (Shop / wax / laser / ...)"
+  },
+  "5) Asosan qaysi materiallardan foydalanasiz? (brend, hipoallergen ...)": {
+    "ru": "5) Какие материалы вы больше всего используете? (Бренд, Hipoallergen ...)",
+    "en": "5) Which materials do you most mainly use? (Brand, Hipoallergen ...)"
+  },
+  "7) Siz uchun muhimroq nima: tezlikmi yoki sifat?": {
+    "ru": "7) Что для вас важнее: скорость или качество?",
+    "en": "7) What is more important to you: speed or quality?"
+  },
+  "8) Xavfsizlik va gigiyena qoidalari?": {
+    "ru": "8) Правила безопасности и гигиены?",
+    "en": "8) Security and hygiene rules?"
+  },
+  "9) Qanday xizmatlaringiz mavjud? (oyoqlar, qo‘llar, yuz, bikini ...)": {
+    "ru": "9) Каковы ваши услуги? (Ноги, руки, сотни, волосы ...)",
+    "en": "9) What are your services? (Feet, hands, hundreds, hairs ...)"
+  },
+  "15) Depilyatsiya jarayonidan yoki natijalaridan video yuboring.": {
+    "ru": "15) Отправьте видео из процесса депиляции или результатов.",
+    "en": "15) Send a video from the Depilation process or the results."
+  },
+  "1) Ism-familiyangizni yozing.": {
+    "ru": "1) Напишите свое имя.",
+    "en": "1) Write your first name."
+  },
+  "3) Administrator sifatida necha yildan beri ishlaysiz?": {
+    "ru": "3) Как долго вы работаете в качестве администратора?",
+    "en": "3) How long have you been working as an administrator?"
+  },
+  "4) Oldin qaysi salon yoki markazlarda ishlagansiz?": {
+    "ru": "4) в каких салонах или центрах вы работали раньше?",
+    "en": "4) In which salon or centers did you work before?"
+  },
+  "5) Eng muhim deb bilgan 3 vazifangiz?": {
+    "ru": "5) 3 задачи, которые вы знаете наиболее важным?",
+    "en": "5) 3 tasks you know most important?"
+  },
+  "6) Mijozlar bilan ishlashda eng muhim jihat?": {
+    "ru": "6) Самый важный аспект работы с клиентами?",
+    "en": "6) The most important aspect of working with customers?"
+  },
+  "7) Jamoa bilan ishlash tajribangiz? Qanday vazifalar?": {
+    "ru": "7) Какой у вас опыт работы с командой? Какие задачи?",
+    "en": "7) What are your experience with the team? What tasks?"
+  },
+  "8) Nizo bo‘lsa, qanday hal qilasiz?": {
+    "ru": "8) Если есть спор, как вы решите?",
+    "en": "8) If there is a dispute, how will you solve?"
+  },
+  "9) Kompyuter va TG/IG orqali ishlay olasizmi?": {
+    "ru": "9) Можете ли вы работать через компьютер и TG / IG?",
+    "en": "9) Can you work via computer and TG / IG?"
+  },
+  "10) Navbatga yozish va grafik tuzish tajribasi bormi?": {
+    "ru": "10) Есть ли опыт написания и подготовки графики?",
+    "en": "10) Is there any experience of writing and preparing graphics?"
+  },
+  "11) Kassaga oid oddiy hisob-kitoblarni qila olasizmi?": {
+    "ru": "11) Можете ли вы выполнить простые расчеты на кассовом аппарате?",
+    "en": "11) Can you do simple calculations on the cash register?"
+  },
+  "12) Ishda eng muhim narsa: barqarorlikmi yoki rivojlanish?": {
+    "ru": "12) Самая важная вещь на работе: стабильность или развитие?",
+    "en": "12) The most important thing at work: stability or development?"
+  },
+  "13) To‘lov shakli qaysi?": {
+    "ru": "13) Какова форма оплаты?",
+    "en": "13) What is the form of payment?"
+  },
+  "13.1) Agar 'Boshqa taklif' bo'lsa, taklifingizni yozing.": {
+    "ru": "13.1) Если еще предложение, напишите свое предложение.",
+    "en": "13.1) If 'else suggestion, write your offer."
+  },
+  "14) Qaysi smena qulay?": {
+    "ru": "14) Какой сдвиг удобен?",
+    "en": "14) Which shift is convenient?"
+  },
+  "15) Qaysi hududda yashaysiz va ishga kelish qulayligi?": {
+    "ru": "15) В какой области вы живете и удобно прийти на работу?",
+    "en": "15) In what area do you live and comfortable to come to work?"
+  },
+  "16) Qisqa video taqdimot yuboring (o'zingizni tanishtiring).": {
+    "ru": "16) Отправьте короткую видео -презентацию (представьте себя).",
+    "en": "16) Send a short video presentation (introduce yourself)."
+  },
+  "17) Mijoz bilan muloqot holatini videoda ko‘rsating.": {
+    "ru": "17) Укажите статус общения с клиентом на видео.",
+    "en": "17) Specify the status of communication with the customer on the video."
+  },
+  "18) Uydagi vaziyat haqida qisqa video yuboring.": {
+    "ru": "18) Отправьте короткое видео о ситуации дома.",
+    "en": "18) Send a short video about the situation at home."
+  },
+  "⬅️ Ortga": {
+    "ru": "⬅️ назад",
+    "en": "⬅️ back"
+  },
+  "Kategoriyani tanlang:": {
+    "ru": "Выберите категорию:",
+    "en": "Select a category:"
+  },
+  "Iltimos, menyudan kategoriya tanlang.": {
+    "en": "Please select a category from the menu.",
+    "ru": "Пожалуйста, выберите категорию из меню."
+  },
+  "Iltimos, video yuboring yoki '⬅️ Ortga' tugmasidan foydalaning.": {
+    "en": "Please submit a video or use the '⬅️ Back' button.",
+    "ru": "Пожалуйста, отправьте видео или используйте кнопку '⬅️ Назад'."
+  },
+  "Foizga ishlayman": {
+    "ru": "Я работаю на процент",
+    "en": "I work for a percentage"
+  },
+  "Oylikka ishlayman": {
+    "ru": "Я работаю месяцами",
+    "en": "I work for months"
+  },
+  "Boshqa taklif": {
+    "ru": "Еще одно предложение",
+    "en": "Another offer"
+  },
+  "08:00–16:00": {
+    "ru": "08:00-16:00",
+    "en": "08:00-16:00"
+  },
+  "16:00–23:00": {
+    "ru": "16:00-23:00",
+    "en": "16:00-23:00"
+  },
+  "Farqi yo‘q": {
+    "ru": "Ничем не отличается",
+    "en": "No different"
+  },
+  "Foizga ishlash": {
+    "ru": "Процент",
+    "en": "Percentage"
+  },
+  "Oylikka ishlash": {
+    "ru": "Работаю в течение нескольких месяцев",
+    "en": "Working for months"
+  },
+  "Foiz asosida": {
+    "ru": "Интерес",
+    "en": "Interest"
+  },
+  "Oylik": {
+    "ru": "Ежемесячно",
+    "en": "Monthly"
+  },
+  "Iltimos, variantlardan birini tanlang.": {
+    "ru": "Пожалуйста, выберите один из вариантов.",
+    "en": "Please select one of the options."
+  },
+  "🌐 Tilni tanlash": {
+    "ru": "🌐 Выберите язык",
+    "en": "🌐 Choose language"
+  }
+}

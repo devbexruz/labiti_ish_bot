@@ -32,8 +32,11 @@ def get_worksheet(spreadsheet_url: str, sheet_name: str):
 
 def append_submission(spreadsheet_url: str, sheet_name: str, answers: Dict[str, Any]):
     ws = get_worksheet(spreadsheet_url, sheet_name)
+    ws.format("A:A", {"wrapStrategy": "WRAP"})
+
     row: List[str] = []
     for quistion in QUESTIONS[sheet_name]:
-        row.append(answers[quistion["text"]])
-    ws.append_row(row, value_input_option="RAW")
+        row.append(
+            answers[quistion["text"]])
+    ws.append_row(row, value_input_option="USER_ENTERED")
     return True

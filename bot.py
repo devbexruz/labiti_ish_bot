@@ -11,11 +11,12 @@ from aiogram.fsm.storage.memory import MemoryStorage
 from questions import CATEGORIES, QUESTIONS
 from sheets_helper import append_submission
 from dotenv import load_dotenv
-
+from utils import to_translate
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 SPREADSHEET_URL = os.getenv("SPREADSHEET_URL")
+BOT_USERNAME = os.getenv("BOT_USERNAME")
 
 if not BOT_TOKEN:
     raise RuntimeError("BOT_TOKEN .env da belgilanmagan")
@@ -32,30 +33,30 @@ class ApplyForm(StatesGroup):
     q_index = State()
 
 def lang_keyboard():
-    kb = [[KeyboardButton(text="O‘zbek tili"), KeyboardButton(text="Русский (RU) — tez orada")]]
+    kb = [[KeyboardButton(text="O‘zbek tili"), KeyboardButton(text="Русский"), KeyboardButton(text="English")]]
     return ReplyKeyboardMarkup(keyboard=kb, resize_keyboard=True)
 
-def categories_keyboard():
+def categories_keyboard(lang):
     rows = []
     row = []
     for i, cat in enumerate(CATEGORIES, start=1):
-        row.append(KeyboardButton(text=cat))
+        row.append(KeyboardButton(text=to_translate(lang, cat)))
         if i % 2 == 0:
             rows.append(row); row = []
     if row:
         rows.append(row)
-    rows.append([KeyboardButton(text="🌐 Tilni tanlash")])
+    rows.append([KeyboardButton(text=to_translate(lang, "🌐 Tilni tanlash"))])
     return ReplyKeyboardMarkup(keyboard=rows, resize_keyboard=True, one_time_keyboard=True)
 
-def choices_keyboard(options):
+def choices_keyboard(options, lang):
     rows = []
     row = []
     for i, opt in enumerate(options, start=1):
-        row.append(KeyboardButton(text=opt))
+        row.append(KeyboardButton(text=to_translate(lang, opt)))
         if i % 2 == 0:
             rows.append(row); row = []
     if row: rows.append(row)
-    rows.append([KeyboardButton(text="⬅️ Ortga")])
+    rows.append([KeyboardButton(text=to_translate(lang, "⬅️ Ortga"))])
     return ReplyKeyboardMarkup(keyboard=rows, resize_keyboard=True)
 
 @dp.message(CommandStart())
@@ -63,11 +64,25 @@ async def start(message: Message, state: FSMContext):
     await state.clear()
     await state.set_state(ApplyForm.language)
     await message.answer(
-        "Assalomu alaykum!\nLABITI ish botiga xush kelibsiz.\nTilni tanlang:",
+        """Uz: Assalomu alaykum!
+LABITI ish botiga xush kelibsiz.
+
+En: Hello!
+Welcome to the LABITI job bot.
+
+Ru: Здравствуйте!
+Добро пожаловать в бот вакансий LABITI.
+
+Tilni tanlang (Please select a language, Выберите язык):
+""",
         reply_markup=lang_keyboard()
     )
 
-@dp.message(ApplyForm.category, F.text == "🌐 Tilni tanlash")
+@dp.message(ApplyForm.category, F.text.in_([
+    "🌐 Tilni tanlash",
+    to_translate("ru", "🌐 Tilni tanlash"),
+    to_translate("en", "🌐 Tilni tanlash")
+]))
 async def back_from_category(message: Message, state: FSMContext):
     await state.set_state(ApplyForm.language)
     await message.answer("Tilni tanlang:", reply_markup=lang_keyboard())
@@ -75,40 +90,63 @@ async def back_from_category(message: Message, state: FSMContext):
 @dp.message(ApplyForm.language)
 async def choose_language(message: Message, state: FSMContext):
     # Hozircha faqat O'zbek
-    await state.update_data(language="uz")
+    if message.text == "O‘zbek tili":
+        await state.update_data(language="uz")
+    elif message.text == "Русский":
+        await state.update_data(language="ru")
+    elif message.text == "English":
+        await state.update_data(language="en")
+    else:
+        await message.answer("Bunday til mavjud emas\nIltimos menyudan biror tilni tanlang!", reply_markup=lang_keyboard())
+        return
+
     await state.set_state(ApplyForm.category)
-    await message.answer("Kategoriya tanlang:", reply_markup=categories_keyboard())
+    data = await state.get_data()
+    language = data["language"]
+    await message.answer(to_translate(language, "Kategoriyani tanlang:"), reply_markup=categories_keyboard(language))
 
 @dp.message(ApplyForm.category)
 async def choose_category(message: Message, state: FSMContext):
-    category = message.text.strip()
-    if category not in QUESTIONS:
-        await message.answer("Iltimos, menyudan kategoriya tanlang.", reply_markup=categories_keyboard())
+    data = await state.get_data()
+    language = data["language"]
+    text = message.text.strip()
+    current_category = ""
+    for category in QUESTIONS:
+        if to_translate(language, category) == text:
+            current_category = category
+            break
+    if current_category == "":
+        await message.answer(to_translate(language, "Iltimos, menyudan kategoriya tanlang."), reply_markup=categories_keyboard(language))
         return
-    await state.update_data(category=category, q_index=0, answers={}, videos={})
-    q = QUESTIONS[category][0]
-    kb = choices_keyboard(q["options"]) if q["type"] == "choice" else None
+    await state.update_data(category=current_category, q_index=0, answers={}, videos={})
+    q = QUESTIONS[current_category][0]
+    kb = choices_keyboard(q["options"], language) if q["type"] == "choice" else choices_keyboard([], language)
     await state.set_state(ApplyForm.q_index)
-    await message.answer(q["text"], reply_markup=kb)
+    await message.answer(to_translate(language, q["text"]), reply_markup=kb)
 
-@dp.message(ApplyForm.q_index, F.text == "⬅️ Ortga")
+@dp.message(ApplyForm.q_index, F.text.in_(["⬅️ Ortga", to_translate("ru", "⬅️ Ortga"), to_translate("en", "⬅️ Ortga")]))
 async def back_from_questions(message: Message, state: FSMContext):
+    data = await state.get_data()
+    language = data["language"]
+    print(language)
     data = await state.get_data()
     q_index = data.get("q_index", 0)
     if q_index == 0:
         await state.set_state(ApplyForm.category)
-        await message.answer("Kategoriya tanlang:", reply_markup=categories_keyboard())
+        await message.answer(to_translate(language, "Kategoriyani tanlang:"), reply_markup=categories_keyboard(language))
         return
     # move one step back
     await state.update_data(q_index=q_index-1)
     data = await state.get_data()
     category = data["category"]
     q = QUESTIONS[category][q_index-1]
-    kb = choices_keyboard(q["options"]) if q["type"] == "choice" else None
-    await message.answer(q["text"], reply_markup=kb)
+    kb = choices_keyboard(q["options"], language) if q["type"] == "choice" else choices_keyboard([], language)
+    await message.answer(to_translate(language, q["text"]), reply_markup=kb)
 
 @dp.message(ApplyForm.q_index, F.video | F.text)
 async def collect_answers(message: Message, state: FSMContext):
+    data = await state.get_data()
+    language = data["language"]
     data = await state.get_data()
     category = data["category"]
     q_index = data["q_index"]
@@ -118,20 +156,27 @@ async def collect_answers(message: Message, state: FSMContext):
     q = QUESTIONS[category][q_index]
     if q["type"] == "video":
         if message.video:
-            file_info = await bot.get_file(message.video.file_id)
-            file_path = file_info.file_path
-            file_url = f"https://api.telegram.org/file/bot{BOT_TOKEN}/{file_path}"
-            videos[q["text"]] = file_url
+            try:
+                file_info = await bot.get_file(message.video.file_id)
+                file_path = file_info.file_path
+                file_url = f"=HYPERLINK(\"https://api.telegram.org/file/bot{BOT_TOKEN}/{file_path}\";\"Video\")"
+                videos[q["text"]] = file_url
+            except:
+                videos[q["text"]] =  f"=HYPERLINK(\"https://t.me/{BOT_USERNAME[1:]}?start={message.video.file_id}\";\"Katta Video\")"
         else:
-            await message.answer("Iltimos, video yuboring yoki '⬅️ Ortga' tugmasidan foydalaning.", reply_markup=choices_keyboard([]))
+            await message.answer(to_translate(language, "Iltimos, video yuboring yoki '⬅️ Ortga' tugmasidan foydalaning."), reply_markup=choices_keyboard([], language))
             return
     elif q["type"] == "choice":
         # Matn variantlardan biri bo'lishi shart
         opt = (message.text or "").strip()
-        if opt not in q["options"]:
-            await message.answer("Iltimos, variantlardan birini tanlang.", reply_markup=choices_keyboard(q["options"]))
+        answers[q["text"]] = False
+        for o in q["options"]:
+            if opt == to_translate(language, o):
+                answers[q["text"]] = opt
+                break
+        if answers[q["text"]] == False:
+            await message.answer(to_translate(language, "Iltimos, variantlardan birini tanlang."), reply_markup=choices_keyboard(q["options"], language))
             return
-        answers[q["text"]] = opt
     else:
         answers[q["text"]] = (message.text or "").strip()
 
@@ -143,7 +188,7 @@ async def collect_answers(message: Message, state: FSMContext):
         try:
             await message.answer(
                 "Biroz kuting ...",
-                reply_markup=categories_keyboard()
+                reply_markup=categories_keyboard(language)
             )
             append_submission(
                 spreadsheet_url=SPREADSHEET_URL,
@@ -157,7 +202,7 @@ async def collect_answers(message: Message, state: FSMContext):
             print(str(e))
             await message.answer(
                 "❌ Saqlashda xatolik yuz berdi. Qayta urunib ko'ring yoki administratorga murojaat qiling.",
-                reply_markup=categories_keyboard()
+                reply_markup=categories_keyboard(language)
             )
         await state.clear()
         return
@@ -165,8 +210,8 @@ async def collect_answers(message: Message, state: FSMContext):
     # Ask next question
     await state.update_data(q_index=q_index, answers=answers, videos=videos)
     next_q = QUESTIONS[category][q_index]
-    kb = choices_keyboard(next_q["options"]) if next_q["type"] == "choice" else choices_keyboard([])
-    await message.answer(next_q["text"], reply_markup=kb)
+    kb = choices_keyboard(next_q["options"], language) if next_q["type"] == "choice" else choices_keyboard([], language)
+    await message.answer(to_translate(language, next_q["text"]), reply_markup=kb)
 
 if __name__ == "__main__":
     import asyncio
