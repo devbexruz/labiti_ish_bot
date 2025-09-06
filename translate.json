@@ -490,5 +490,21 @@
   "🌐 Tilni tanlash": {
     "ru": "🌐 Выберите язык",
     "en": "🌐 Choose language"
+  },
+  "Belgilandi:\n": {
+    "ru": "Выбрано:\n",
+    "en": "Selected:\n"
+  },
+  "Biroz kuting ...": {
+    "ru":"Подождите минуту...",
+    "en": "Wait a minute..."
+  },
+  "✅ Arizangiz muvaffaqiyatli yuborildi!\nRahmat! Ma’lumotlaringiz qabul qilindi va tizimga saqlandi.\nTez orada administrator siz bilan bog‘lanadi.\n\n📞 Savollar bo‘lsa, shu yerda yozishingiz mumkin.": {
+    "ru": "✅ Ваша заявка успешно отправлена!\nСпасибо! Ваши данные получены и сохранены в системе.\nАдминистратор свяжется с вами в ближайшее время.\n\n📞 Если у вас есть вопросы, вы можете написать здесь.",
+    "en": "✅ Your application has been successfully submitted!\nThank you! Your information has been received and saved in the system.\nThe administrator will contact you shortly.\n\n📞 If you have any questions, you can write here."
+  },
+  "❌ Saqlashda xatolik yuz berdi. Qayta urunib ko'ring (/start) yoki administratorga murojaat qiling.": {
+    "ru": "❌ Произошла ошибка при сохранении. Попробуйте ещё раз (/start) или обратитесь к администратору.",
+    "en": "❌ An error occurred while saving. Please try again (/start) or contact an administrator."
   }
 }

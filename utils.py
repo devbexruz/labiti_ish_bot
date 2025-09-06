@@ -1,4 +1,6 @@
 from typing import List, Dict
+from aiogram.types import CallbackQuery
+
 dictionary: Dict[str, str] = {}
 
 import json
@@ -13,7 +15,37 @@ def to_translate(lang, text):
     print(lang, ":", text)
     return text
 
+def call_text(call: CallbackQuery) -> str | None:
+    """
+    CallbackQuery dan bosilgan tugma matnini qaytaradi.
+    Agar topilmasa None qaytadi.
+    """
+    if not call.message.reply_markup:
+        return None
 
+    for row in call.message.reply_markup.inline_keyboard:
+        for button in row:
+            if button.callback_data == call.data:
+                return button.text
+    return None
+
+
+def call_selectable_markup(call: CallbackQuery) -> str | None:
+    """
+    CallbackQuery dan bosilgan tugma matnini qaytaradi.
+    Agar topilmasa None qaytadi.
+    """
+    if not call.message.reply_markup:
+        return None
+    markup = call.message.reply_markup
+    for row in markup.inline_keyboard:
+        for button in row:
+            if button.callback_data[:6]=="select":
+                button.text = button.text[2:]
+                button.callback_data = button.callback_data[6:]
+            elif button.callback_data == call.data:
+                button.text = "✅ "+button.text
+    return markup
 
 if __name__ == "__main__":
     with open("questions.json", "r", encoding="utf-8") as f:
