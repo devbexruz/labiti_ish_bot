@@ -40,3 +40,4 @@ def append_submission(spreadsheet_url: str, sheet_name: str, answers: Dict[str, 
             answers[quistion["text"]])
     ws.append_row(row, value_input_option="USER_ENTERED")
     return True
+
